@@ -9,27 +9,34 @@
       #unsplash {
         height: 460px;
         width: 100%;
+        margin-bottom:16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+     <img class="img-fluid" id="unsplash" src="https://company-careers-website.kishoryd.repl.co/static/brendan-church-pKeF6Tt3c08-unsplash.jpg"height="320">
     <div class="container">
    <h1 class="text-center mt-2 mb-4">Company Career</h1>
-    <img class="img-fluid" id="unsplash" src="https://company-careers-website.kishoryd.repl.co/static/brendan-church-pKeF6Tt3c08-unsplash.jpg"height="320">
-    <h2 class="text-center mt-2 mb-4">About Company</h2>
+   <div class="row" style="margin-bottom:16px"> 
+      <div class="col-md-6">  
     <p class="lead">
       We are looking for a web designer who will be responsible for creating great websites for our clients. Primary duties include conceptualizing and implementing creative ideas for client websites, as well as creating visual elements that are in line with our clients' branding. You will be working closely with our web development team to ensure proper and hassle-free implementation.
     </p>
-    <h2 class="text-center mt-2 mb-4">Job Openings</h2>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/annie-spratt-QckxruozjRg-unsplash.jpg" style="height:320px;border-radius:4px;">
+      </div>
+    </div>
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
     <p> 
       {% for job in jobs%}
         {% include 'jobitem.html' %}
       {% endfor %}
     </p>
       <div class="text-center">
-    <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023, Company Career</p>
+    <a class="btn btn-primary btn-lg" href="mailto:kishor.y.damodar@gmail.com?subject=Question%20about%20Job%20Openings&body=My%20Name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Questions%3A%20%3Center%20the%20question%20here%3E">Contact Us</a>
       </div>
-    </div>
+    {% include 'footer.html' %}
   </body>
 </html>

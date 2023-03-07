@@ -27,7 +27,7 @@ JOBS = [
     'title': 'Backend Engineer',
     'location': 'San Francisco, USA',
     'salary': '$120,000'
-  },
+  }
 ]
 
 def load_jobs_from_db():

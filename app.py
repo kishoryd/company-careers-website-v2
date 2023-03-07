@@ -27,7 +27,7 @@ JOBS = [
     'title': 'Backend Engineer',
     'location': 'San Francisco, USA',
     'salary': '$120,000'
-  },
+  }
 ]
 
 def load_jobs_from_db():
@@ -56,3 +56,6 @@ def list_jobs():
 
 
 if __name__ == '__main__':
+  app.run(host='0.0.0.0', debug=True)
+
+  

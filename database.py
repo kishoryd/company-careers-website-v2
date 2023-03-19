@@ -14,20 +14,22 @@ def load_jobs_from_db():
     result = conn.execute(text("select * from jobs"))
 
     jobs = []
-    for row in result.all():
-      # get the column names
-      keys = result.keys()
-      # create a dictionary for the row
-      row_dict = dict(zip(keys, row))
-      # append the dictionary to the list
-      jobs.append(row_dict)
-    return jobs
-
+  for row in result.all():
+     # get the column names
+     keys = result.keys()
+     # create a dictionary for the row
+     row_dict = dict(zip(keys, row))
+     # append the dictionary to the list
+     jobs.append(row_dict)
+  return jobs
 
 def load_job_from_db(id):
   with engine.connect() as conn:
-    result = conn.execute(text("SELECT * FROM jobs WHERE id = :val"), val=id)
-    rows = result.all()
+    result = conn.execute(
+      text("SELECT * FROM jobs WHERE id = :val"),
+      {"val": id}
+    )
+    rows = result.mappings().all()
     if len(rows) == 0:
       return None
     else:
